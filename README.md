@@ -1,1 +1,1 @@
-# S2S-Analysis-Assistance
+# S2S-Analysis-Assistant
