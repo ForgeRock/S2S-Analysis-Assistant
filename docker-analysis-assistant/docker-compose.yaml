@@ -1,0 +1,38 @@
+services:
+ rock-beats:
+  image: gcr.io/engineering-devops/forgerock-accelerators/forgerock-s2s-accelerators/rock-beats:latest
+  container_name: analysis-assistant-server
+  restart: always
+  environment:
+  - JAVA_OPTS=$JAVA_OPTS
+  - HC_SERVER_CHECKS_FILE=config/amChecks.json
+  - HC_SERVER_TMP_DIRECTORY=/tmp
+  ports:
+  - ${EXT_SERVER_HTTP}:8000
+ platform-ui:
+  image: gcr.io/forgerock-io/forgerock-accelerators/forgerock-s2s-accelerators/platform-ui:latest
+  container_name: analysis-assistant-ui
+  restart: always
+  environment:
+  - APP_NAME=${APP_NAME}
+  - VUE_APP_IDM_URL=${VUE_APP_IDM_URL}
+  - VUE_APP_IDM_ADMIN_URL=${VUE_APP_IDM_ADMIN_URL}
+  - VUE_APP_ADMIN_CLIENT_ID=${VUE_APP_ADMIN_CLIENT_ID}
+  - VUE_APP_ADMIN_CLIENT_SECRET=${VUE_APP_ADMIN_CLIENT_SECRET}
+  - VUE_APP_ENABLE_IDM_ACCESS_TOKEN=${VUE_APP_ENABLE_IDM_ACCESS_TOKEN}
+  - VUE_APP_I18N_LOCALE=${VUE_APP_I18N_LOCALE}
+  - VUE_APP_HOST=${VUE_APP_HOST}
+  - VUE_APP_DEV_PORT=${VUE_APP_DEV_PORT}
+  - VUE_APP_MENUS_FILE=${VUE_APP_MENUS_FILE}
+  - VUE_APP_ROUTES_FILE=${VUE_APP_ROUTES_FILE}
+  - VUE_APP_IDM_API_TIMEOUT=${VUE_APP_IDM_API_TIMEOUT}
+  - VUE_APP_IDM_ADMIN=${VUE_APP_IDM_ADMIN}
+  - VUE_APP_IDM_ADMIN_PWD=${VUE_APP_IDM_ADMIN_PWD}
+  ports:
+  - ${EXT_UI_HTTP}:8080
+  depends_on:
+   rock-beats:
+    condition: service_started
+volumes:
+ db-data:
+  driver: local
