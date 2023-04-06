@@ -1,0 +1,87 @@
+##
+#  Required for Docker
+##
+## APP_NAME possible values: S2S or DATA_ANALYSE_TOOL
+## EXT_IDM_HHTP should be the PORT where the S2S ROCKBEATS BACKEND instance is running
+APP_NAME=DATA_ANALYSE_TOOL
+OPENIDM_ADMIN_PASSWORD=openidm-admin
+PG_PASS=P0$R3s002
+JAVA_OPTS=-XX:MaxRAMPercentage=95 -XX:InitialRAMPercentage=85
+SERVER_OPTS=-Xmx4096m -Xms4096m
+EXT_UI_HTTP=8082
+EXT_SERVER_HTTP=8000
+
+##
+#  Required for vue app (boiler plate)
+##
+## VUE_APP_IDM_URL should be the ENDPOINT where the S2S ROCKBEATS BACKEND instance is running
+VUE_APP_IDM_URL="http://localhost:${EXT_SERVER_HTTP}"
+VUE_APP_IDM_ADMIN_URL="http://localhost:${EXT_SERVER_HTTP}/admin"
+VUE_APP_I18N_LOCALE=en
+VUE_APP_HOST=0.0.0.0
+VUE_APP_DEV_PORT=8082
+VUE_APP_MENUS_FILE=menus.platform
+VUE_APP_ROUTES_FILE=routes.platform
+
+##
+#  Required for Core VueApp
+##
+VUE_APP_IDM_API_TIMEOUT=2000
+VUE_APP_IDM_API_BACKOFF_RETRIES=3
+VUE_APP_IDM_API_BACKOFF_EXPONENT=2
+VUE_APP_ADMIN_CLIENT_ID=s2s-admin-ui
+VUE_APP_ADMIN_CLIENT_SECRET=Passw0rd123
+VUE_APP_IDM_ADMIN=openidm-admin
+VUE_APP_IDM_ADMIN_PWD=openidm-admin
+VUE_APP_ENABLE_IDM_ACCESS_TOKEN=false
+
+##
+#  Required for Listings (idm -> get / update objects)
+##
+VUE_APP_CONFIG_MANAGED_OBJECT=config
+VUE_APP_OAUTH2CLIENT_MANAGED_OBJECT=oauth2client
+VUE_APP_JOURNEY_MANAGED_OBJECT=journey
+VUE_APP_JOURNEYNODE_MANAGED_OBJECT=journeyNode
+VUE_APP_SCRIPT_MANAGED_OBJECT=script
+VUE_APP_FEDERATION_COT_MANAGED_OBJECT=federationcircleoftrust
+VUE_APP_FEDERATION_ENTITY_PROVIDER_MANAGED_OBJECT=federationentityprovider
+VUE_APP_IDENTITY_GATEWAY_AGENT=identitygatewayagent
+VUE_APP_JAVA_AGENT=javaagent
+VUE_APP_WEB_AGENT=webagent
+VUE_APP_AUTHORIZATION_POLICY_SETS_MANAGED_OBJECT=policysets
+VUE_APP_RESOURCE_TYPES_MANAGED_OBJECT=resourcetypes
+VUE_APP_AUTHORIZATION_POLICIES_MANAGED_OBJECT=policies
+
+##
+#  Required for Discovery (recon -> pull objects)
+##
+VUE_APP_CONNECTOR_LEGACY=ScriptedRestAmOnPremise
+VUE_APP_MAPPING_LEGACY_IDM_OAUTH2CLIENTS=onpremise_idm_oauth2clients
+VUE_APP_MAPPING_LEGACY_IDM_SCRIPTS=onpremise_idm_scripts
+VUE_APP_MAPPING_LEGACY_IDM_JOURNEYS=onpremise_idm_journeys
+VUE_APP_MAPPING_LEGACY_IDM_POLICIES=onpremise_idm_policies
+VUE_APP_MAPPING_LEGACY_IDM_FEDERATION_COTS=onpremise_idm_federation_cots
+VUE_APP_MAPPING_LEGACY_IDM_FEDERATION_ENTITIES=onpremise_idm_federation_entities
+VUE_APP_MAPPING_LEGACY_IDM_FIDC_IG_AGENTS=onpremise_idm_identity_gateway_agents
+VUE_APP_MAPPING_LEGACY_IDM_FIDC_JAVA_AGENTS=onpremise_idm_java_agents
+VUE_APP_MAPPING_LEGACY_IDM_FIDC_WEB_AGENTS=onpremise_idm_web_agents
+VUE_APP_MAPPING_LEGACY_IDM_RESOURCE_TYPES=onpremise_idm_resTypes
+VUE_APP_MAPPING_LEGACY_IDM_POLICY_SETS=onpremise_idm_policySets 
+VUE_APP_MAPPING_LEGACY_IDM_IDENTITY_POLICIES=onpremise_idm_policies
+
+##
+#  Required for Migration (recon -> push objects)
+##
+VUE_APP_CONNECTOR_FIDC=ScriptedRestAmIdentityCloud
+VUE_APP_MAPPING_IDM_FIDC_OAUTH2CLIENTS=idm_fidc_oauth2clients
+VUE_APP_MAPPING_IDM_FIDC_JOURNEYS=idm_fidc_journeys
+VUE_APP_MAPPING_IDM_FIDC_SCRIPTS=idm_fidc_scripts
+VUE_APP_MAPPING_IDM_FIDC_POLICIES=idm_fidc_policies
+VUE_APP_MAPPING_IDM_FIDC_FEDERATION_COTS=idm_fidc_federation_cots
+VUE_APP_MAPPING_IDM_FIDC_FEDERATION_ENTITIES=idm_fidc_federation_entities
+VUE_APP_MAPPING_IDM_FIDC_IG_AGENTS=idm_fidc_identity_gateway_agents
+VUE_APP_MAPPING_IDM_FIDC_JAVA_AGENTS=idm_fidc_java_agents
+VUE_APP_MAPPING_IDM_FIDC_WEB_AGENTS=idm_fidc_web_agents
+VUE_APP_MAPPING_IDM_FIDC_RESOURCE_TYPES=idm_fidc_resTypes
+VUE_APP_MAPPING_IDM_FIDC_POLICY_SETS=idm_fidc_policySets
+VUE_APP_MAPPING_IDM_FIDC_IDENTITY_POLICIES=idm_fidc_policies
