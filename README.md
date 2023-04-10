@@ -6,7 +6,6 @@ Automate analysis of collected configurations from Self-managed deployment for A
 * "High-level" effort analysis
 
 
-**Instructions to run the S2S Analyse Tool using Forgerock Public Docker Registry**
 
 # Setup and configuration
 
