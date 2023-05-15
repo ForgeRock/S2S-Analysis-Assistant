@@ -54,7 +54,7 @@ git clone https://github.com/ForgeRock/S2S-Analysis-Assistant.git
 
 **4. Run the complete docker stack locally:**
 
-`cd docker-analyse-tool`
+`cd docker-analysis-assistant`
 
 > Edit **env_custom** file and change all the endpoints accordingly if needed:
 * _**APP_NAME**_ should be: DATA_ANALYSE_TOOL
@@ -77,6 +77,6 @@ Bring up the stack:
 
 **5. Run the complete docker stack locally with an updated docker image:**
 
-`cd docker-analyse-tool`
+`cd docker-analysis-assistant`
 
 `docker-compose --env-file env_custom pull && docker-compose --env-file env_custom stop && docker-compose --env-file env_custom up -d`
