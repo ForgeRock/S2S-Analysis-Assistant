@@ -72,7 +72,7 @@ Bring up the stack:
 
 > Check if the S2S tool has successfully started:
 
-* S2S Analysis Assistant Admin UI - http://localhost:{{EXT_UI_HTTP}} (no authentication will be needed)
+* S2S Analysis Assistant Admin UI - http://localhost:8082 (no authentication will be needed)
 
 
 **5. Run the complete docker stack locally with an updated docker image:**
